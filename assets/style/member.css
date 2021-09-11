@@ -1,0 +1,80 @@
+.card-group {
+  display: flex;
+  flex-flow: wrap;
+}
+
+.card-group .card{
+  margin: 10px;
+}
+
+.card {
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  animation-direction: alternate;
+  border: 0px;
+  border-radius: 5px;
+  box-shadow: 2px 2px 3px #393950;
+  box-sizing: border-box;
+  margin: 0px;
+  margin-bottom: 20px;
+  max-width: 400px;
+  width: 100%;
+  padding: 15px;
+}
+
+.card #name {
+  margin: 10px 0px;
+}
+
+.card #name b {
+  font-size: 1.5em;
+}
+
+.card #name span {
+  font-size: 1.2em;
+}
+
+.card #separate {
+  background-color: #333;
+  height: 2px;
+  float: right;
+  margin: 10px 0px;
+  width: 68%;
+}
+
+.card ul, .card li {
+  list-style-type: none;
+}
+
+.card ul {
+  clear: right;
+  margin: 10px 0px;
+  padding: 0px;
+}
+
+.card li {
+  align-items: baseline;
+  display: flex;
+  line-height: 30px;
+  margin-left: 5px;
+  vertical-align: baseline;
+}
+
+.card li i {
+  font-size: 1.35em;
+  margin-right: 8px;
+}
+
+.card .profile {
+  align-items: flex-start;
+  display: flex;
+}
+
+.card .profile img {
+  border-radius: 50%;
+  box-sizing: border-box;
+  margin-right: 20px;
+  width: 80px;
+  height: auto;
+}

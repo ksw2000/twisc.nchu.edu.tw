@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="zh-tw" style="height: 100%;">
+  <head>
+    <title>{{.Title}}</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <link rel="shortcut icon" href="/favicon.ico"/>
+    <meta property="og:title" content="{{.Title}}"/>
+    <meta property="og:description" content="{{.Title}}"/>
+    <meta property="og:image" content="/assets/img/logo.png"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="/assets/style/main.css?{{.Time}}">
+    {{if .Isindex}}
+    <link rel="stylesheet" href="/assets/style/for-index.css?{{.Time}}">
+    {{end}}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-dateFormat/1.0/jquery.dateFormat.min.js"></script>
+    {{if .IsLogin}}
+    <script src="/assets/js/ckeditor/ckeditor.js"></script>
+    {{end}}
+    <script src="/assets/js/main.js?{{.Time}}"></script>
+    <script>
+    if(navigator.userAgent.search("Trident") > -1){
+      if(confirm("該網站不不支援 Internet Explorer (IE)，請按確定以下載 Google Chrome")){
+        document.location.href="https://www.google.com/chrome/";
+      }else{
+        if(confirm("請按確定以下載 Opera")){
+          document.location.href="https://www.opera.com/";
+        }else{
+          if(confirm("請按確定以下載 Firefox")){
+            document.location.href="https://www.mozilla.org/firefox/new/";
+          }else{
+            document.location.href="https://www.microsoft.com/zh-tw/edge";
+          }
+        }
+      }
+    }
+    </script>
+  </head>
+  <body>
+    <div id="notice"></div>
+    <nav>
+      <div id="fix-1200">
+        <div id="button-less-900px">
+          <a href="javascript:void(0);" onclick="openSideBar()"><i class="material-icons">menu</i></a>
+        </div>
+        <div id="button-over-900px">
+          <ul>
+            <li><a href="/">首頁</a></li>
+            <li><a href="/news">最新消息</a></li>
+            <li><a href="/technic">技術研發</a></li>
+            <li><a href="/academy">學術活動</a></li>
+            <li><a href="/research">研究成果</a></li>
+            <li><a href="/official-document">辦法表格</a></li>
+            <li><a href="/about">關於中心</a>
+          {{if .IsLogin}}
+            <li><a href="/manage">管理<span class="arrow-down"></span></a>
+              <ul>
+                <li><a href="/manage">歡迎</a></li>
+                <li><a href="/manage/article">文章管理</a></li>
+                <li><a href="/manage/reg">註冊新用戶</a></li>
+                <li><a href="/logout">登出</a></li>
+              </ul>
+            </li>
+          {{end}}
+          </ul>
+        </div>
+      </div>
+    </nav>
+    {{if .Isindex}}
+      <div id="banner">
+        <div class="banner-over-900px">
+          <h1>國立中興大學資通安全研究與教學中心</h1>
+          <h2>Taiwan Information Security Center</h2>
+        </div>
+        <div class="banner-less-900px">
+          <h1>國立中興大學</h1>
+          <h1>資通安全研究與教學中心</h1>
+          <h2>Taiwan Information Security Center</h2>
+        </div>
+      </div>
+    {{end}}
+
+    {{if .Isindex}}
+      <div id="main-for-index">
+    {{else}}
+      <div id="main">
+    {{end}}
+      {{.Main}}
+      </div>
+
+    <footer>
+      <div>
+        <table>
+          <tr>
+            <td>
+              <li><a target="_blank" href="//www.twisc.ntust.edu.tw/">TWISC@NTUST (台科大)</a></li>
+              <li>National Taiwan University of Science and Technology</li>
+              <li><a target="_blank" href="//twisc.nctu.edu.tw/">TWISC@NYCU (陽明交通)</a></li>
+              <li>National Yang Ming Chiao Tung University</li>
+              <li><a target="_blank" href="//www.twisc.ncku.edu.tw/">TWISC@NCKU (成功大學)</a></li>
+              <li>National Cheng Kung University</li>
+              <li><a target="_blank" href="//twisc.ntu.edu.tw/">TWISC@NTU (台灣大學)</a></li>
+              <li>National Taiwan University</li>
+              <li><a target="_blank" href="//twisc.nsysu.edu.tw/">TWISC@NSYSU (中山大學)</a></li>
+              <li>National Sun Yat-sen University</li>
+              <li><a target="_blank" href="//twisc.cs.nthu.edu.tw/">TWISC@NTHU (清華大學)</a></li>
+              <li>National Tsing Hua University</li>
+            </td>
+            <td>
+              <li><a target="_blank" href="//www.nchu.edu.tw/">國立中興大學</a></li>
+              <li>National Chung Hsing University</li>
+              <li><a target="_blank" href="//www.twisc.org/tw/">資通安全研究與教學中心</a></li>
+              <li>Taiwan Information Security Center</li>
+            {{if .IsLogin}}
+              <li><a href="/logout">登出</a> | <a href="/login">開發人員</a></li>
+              <li>Log out | For developer</li>
+            {{else}}
+              <li><a href="/login">開發人員</a></li>
+              <li>For developer</li>
+            {{end}}
+            </td>
+          </tr>
+        </table>
+        <div style="margin: 0px auto; text-align:center;">
+          <p> ── TWISC ✕ NCHU © {{.Year}}  ──</p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

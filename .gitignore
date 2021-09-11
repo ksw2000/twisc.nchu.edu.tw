@@ -1,0 +1,12 @@
+fonts/
+upload/
+~*.*
+assets/js/ckeditor
+.well-known/
+*.crt
+*.key
+*.exe
+*.out
+*.db
+_*
+main
