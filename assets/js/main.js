@@ -94,13 +94,13 @@ function notice(msg, t) {
 }
 
 // -------------------------------- layout page --------------------------------
-function openSideBar(){
+function openSideBar() {
     const menuBtn = document.querySelector('#button-less-900px a i');
     const sideBar = document.getElementById('button-over-900px');
-    if (sideBar.classList.contains('show')){
+    if (sideBar.classList.contains('show')) {
         sideBar.classList.remove('show');
         menuBtn.innerHTML = 'menu';
-    }else{
+    } else {
         sideBar.classList.add('show');
         menuBtn.innerHTML = 'close';
     }
@@ -117,7 +117,7 @@ function loadCalendar(date, callback) {
             console.log(data);
             return;
         }
-        if(callback) callback(data);
+        if (callback) callback(data);
     }, 'json');
 }
 
@@ -186,3 +186,21 @@ function register() {
         }
     }, 'json');
 }
+
+// ----------------------------------- routing ---------------------------------
+// for rendering nav bar
+$(()=>{
+    console.log('haha');
+    try {
+        let url = window.location.pathname.split('/')[1];
+        let domList = $('#nav-routing-wrapper li');
+        for(let i = 0; i < domList.length; i++){
+            let dom = domList[i];
+            if (dom.id === `nav-routing-${url}`) {
+                $(dom).addClass('nav-routing-current');
+            } else {
+                $(dom).removeClass('nav-routing-current');
+            }
+        }
+    } catch (e) { console.log(e) }
+});

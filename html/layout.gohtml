@@ -45,14 +45,14 @@
           <a href="javascript:void(0);" onclick="openSideBar()"><i class="material-icons">menu</i></a>
         </div>
         <div id="button-over-900px">
-          <ul>
-            <li><a href="/">首頁</a></li>
-            <li><a href="/news">最新消息</a></li>
-            <li><a href="/technic">技術研發</a></li>
-            <li><a href="/academy">學術活動</a></li>
-            <li><a href="/research">研究成果</a></li>
-            <li><a href="/official-document">辦法表格</a></li>
-            <li><a href="/about">關於中心</a>
+          <ul id="nav-routing-wrapper">
+            <li id="nav-routing-"><a href="/">首頁</a></li>
+            <li id="nav-routing-news"><a href="/news">最新消息</a></li>
+            <li id="nav-routing-technic"><a href="/technic">技術研發</a></li>
+            <li id="nav-routing-academy"><a href="/academy">學術活動</a></li>
+            <li id="nav-routing-research"><a href="/research">研究成果</a></li>
+            <li id="nav-routing-official-document"><a href="/official-document">辦法表格</a></li>
+            <li id="nav-routing-about"><a href="/about">關於中心</a>
           {{if .IsLogin}}
             <li><a href="/manage">管理<span class="arrow-down"></span></a>
               <ul>
@@ -104,10 +104,10 @@
               <li>National Taiwan University</li>
               <li><a target="_blank" href="//twisc.nsysu.edu.tw/">TWISC@NSYSU (中山大學)</a></li>
               <li>National Sun Yat-sen University</li>
-              <li><a target="_blank" href="//twisc.cs.nthu.edu.tw/">TWISC@NTHU (清華大學)</a></li>
-              <li>National Tsing Hua University</li>
             </td>
             <td>
+              <li><a target="_blank" href="//twisc.cs.nthu.edu.tw/">TWISC@NTHU (清華大學)</a></li>
+              <li>National Tsing Hua University</li>
               <li><a target="_blank" href="//www.nchu.edu.tw/">國立中興大學</a></li>
               <li>National Chung Hsing University</li>
               <li><a target="_blank" href="//www.twisc.org/tw/">資通安全研究與教學中心</a></li>
