@@ -6,8 +6,6 @@
   width: 100%;
 }
 
-
-
 /*----------------------------------------------banner----------------------------------------------*/
 
 #banner {
@@ -171,4 +169,142 @@
 #calendar-month-choose div:nth-child(2) {
   flex-grow: 1;
   text-align: center;
+}
+
+/*hori*/
+
+.hori-frame {
+  background-attachment: scroll;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  font-size: 0px;
+  height: auto;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+.hori-frame.fixed {
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+}
+
+.hori-frame:hover .left {
+  left: 0px;
+}
+
+.hori-frame:hover .right {
+  right: 0px;
+}
+
+.hori-frame .left {
+  left: -80px;
+  transition: left 500ms;
+}
+
+.hori-frame .right {
+  right: -80px;
+  transition: right 500ms;
+}
+
+.hori-frame .side {
+  border-radius: 50%;
+  cursor: pointer;
+  color: #fff;
+  font-size: 80px;
+  height: 80px;
+  line-height: 80px;
+  position: absolute;
+  top: 50%;
+  transform: translate(0%, -50%);
+  width: 80px;
+}
+
+.hori-frame img {
+  visibility: hidden;
+  width: 100%;
+}
+
+.hori-frame-title {
+  backdrop-filter: contrast(.6);
+  color: #fff;
+  display: block;
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  text-align: center;
+  top: 0px;
+  width: 100%;
+}
+
+.hori-frame-title p {
+  color: #fff;
+  left: 50%;
+  margin: 0px;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.hori-frame-title p a {
+  color: #fff;
+  display: block;
+  font-size: 3.5rem;
+  font-weight: bold;
+  ;
+  line-height: 5rem;
+}
+
+.hori-frame-title p span {
+  font-size: 1.3rem;
+  font-weight: normal;
+}
+
+.sub-hori-frame {
+  display: none;
+  left: 0;
+  position: absolute;
+  top: 0px;
+}
+
+@keyframes fly-up {
+  0% {
+    transform: translate(-50%, 100px);
+  }
+  100% {
+    transform: translate(-50%, -50%);
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .box-center-2 p {
+    font-size: var(--mobile-title-font-size);
+  }
+  .hori-frame-title p a {
+    font-size: var(--mobile-title-font-size);
+  }
+}
+
+@media screen and (min-width: 501px) and (max-width: 700px) {
+  .hori-frame .side {
+    border-radius: 50%;
+    font-size: 60px;
+    height: 60px;
+    line-height: 60px;
+    width: 60px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .hori-frame .side {
+    border-radius: 50%;
+    font-size: 40px;
+    height: 40px;
+    line-height: 40px;
+    width: 40px;
+  }
 }
