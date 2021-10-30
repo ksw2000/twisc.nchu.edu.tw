@@ -48,11 +48,12 @@
           <ul id="nav-routing-wrapper">
             <li id="nav-routing-"><a href="/">首頁</a></li>
             <li id="nav-routing-news"><a href="/news">最新消息</a></li>
+            <li id="nav-routing-about"><a href="/about">關於中心</a>
             <li id="nav-routing-technic"><a href="/technic">技術研發</a></li>
             <li id="nav-routing-academy"><a href="/academy">學術活動</a></li>
             <li id="nav-routing-research"><a href="/research">研究成果</a></li>
             <li id="nav-routing-official-document"><a href="/official-document">辦法表格</a></li>
-            <li id="nav-routing-about"><a href="/about">關於中心</a>
+            <li id="nav-routing-official-document"><a href="/official-document">辦法表格</a></li>
           {{if .IsLogin}}
             <li><a href="/manage">管理<span class="arrow-down"></span></a>
               <ul>
@@ -94,24 +95,25 @@
         <table>
           <tr>
             <td>
+              <li><a target="_blank" href="//www.twisc.org/tw/">TWISC (資通安全研究與教學中心)</a></li>
+              <li>Taiwan Information Security Center</li>
               <li><a target="_blank" href="//www.twisc.ntust.edu.tw/">TWISC@NTUST (台科大)</a></li>
               <li>National Taiwan University of Science and Technology</li>
               <li><a target="_blank" href="//twisc.nctu.edu.tw/">TWISC@NYCU (陽明交通)</a></li>
               <li>National Yang Ming Chiao Tung University</li>
               <li><a target="_blank" href="//www.twisc.ncku.edu.tw/">TWISC@NCKU (成功大學)</a></li>
               <li>National Cheng Kung University</li>
+            </td>
+            <td>
               <li><a target="_blank" href="//twisc.ntu.edu.tw/">TWISC@NTU (台灣大學)</a></li>
               <li>National Taiwan University</li>
               <li><a target="_blank" href="//twisc.nsysu.edu.tw/">TWISC@NSYSU (中山大學)</a></li>
               <li>National Sun Yat-sen University</li>
-            </td>
-            <td>
               <li><a target="_blank" href="//twisc.cs.nthu.edu.tw/">TWISC@NTHU (清華大學)</a></li>
               <li>National Tsing Hua University</li>
               <li><a target="_blank" href="//www.nchu.edu.tw/">國立中興大學</a></li>
               <li>National Chung Hsing University</li>
-              <li><a target="_blank" href="//www.twisc.org/tw/">資通安全研究與教學中心</a></li>
-              <li>Taiwan Information Security Center</li>
+            <!--
             {{if .IsLogin}}
               <li><a href="/logout">登出</a> | <a href="/login">開發人員</a></li>
               <li>Log out | For developer</li>
@@ -119,6 +121,7 @@
               <li><a href="/login">開發人員</a></li>
               <li>For developer</li>
             {{end}}
+            -->
             </td>
           </tr>
         </table>
