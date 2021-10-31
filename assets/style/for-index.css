@@ -171,7 +171,31 @@
   text-align: center;
 }
 
-/*hori*/
+/*double side*/
+
+.double-side-parent {
+  box-sizing: border-box;
+  display: flex;
+  width: 100%;
+}
+
+.double-side {
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 10px;
+  width: 50%;
+}
+
+@media screen and (max-width: 600px) {
+  .double-side-parent {
+    flex-wrap: wrap;
+  }
+  .double-side {
+    width: 100%;
+  }
+}
+
+/*horizontal frame*/
 
 .hori-frame {
   background-attachment: scroll;
@@ -183,10 +207,12 @@
   overflow: hidden;
   position: relative;
   width: 100%;
+  max-width: 600px;
+  margin: 0px auto;
 }
 
 .hori-frame.fixed {
-  background-attachment: fixed;
+  /* background-attachment: fixed; */
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;

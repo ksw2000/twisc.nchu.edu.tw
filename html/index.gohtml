@@ -1,53 +1,76 @@
 <script>
-// Banner
-function Banner(list) {
+  // Banner
+  function Banner(list, time) {
     this.index = 0;
     this.list = list;
     this.len = list.length;
-    this.swap = (shift) => {
-        new_index = (this.index + shift + this.len) % this.len;
-        // reset
-        if (new_index == 0) {
-            $('#' + this.list[this.index]).fadeOut(800, () => {
-                $('#' + this.list[new_index]).fadeIn(800);
-            });
-        } else if (this.index === 0) {
-            $('#' + this.list[new_index]).fadeIn(800);
-        } else {
-            $('#' + this.list[this.index]).fadeOut(800);
-            $('#' + this.list[new_index]).fadeIn(800);
-        }
-        this.index = new_index;
+    this.time = time;
+    this.swap = (shift, resetTimer) => {
+      new_index = (this.index + shift + this.len) % this.len;
+      // reset
+      if (new_index == 0) {
+        $('#' + this.list[this.index]).fadeOut(800, () => {
+          $('#' + this.list[new_index]).fadeIn(800);
+        });
+      } else if (this.index === 0) {
+        $('#' + this.list[new_index]).fadeIn(800);
+      } else {
+        $('#' + this.list[this.index]).fadeOut(800);
+        $('#' + this.list[new_index]).fadeIn(800);
+      }
+      this.index = new_index;
+      if (resetTimer) {
+        this.clearTimer();
+        this.setTimer();
+      }
     }
-    this.left = () => this.swap(-1);
-    this.right = () => this.swap(1);
-}
-var mainPageBanner = new Banner(['banner-img-1', 'banner-img-2', 'banner-img-3', 'banner-img-4']);
+    this.left = () => this.swap(-1, true);
+    this.right = () => this.swap(1, true);
 
-// timer
-setInterval(()=>{
-  mainPageBanner.right();
-}, 3000);
+    this.timer = null;
+    this.clearTimer = () => {
+      if (timer) clearInterval(this.timer);
+    }
+    this.setTimer = () => {
+      this.timer = setInterval(() => {
+        this.swap(1, false);
+      }, this.time);
+    }
+
+    if (this.time) {
+      this.setTimer();
+    }
+  }
+  var mainPageBanner = new Banner(['banner-img-1', 'banner-img-2', 'banner-img-3', 'banner-img-4'], 5000);
+
 </script>
 
-<div class="hori-frame fixed" id="banner-img-1" style="background-image: url('/assets/img/scroll-1.png');">
-  <img src="/assets/img/scroll-1.png">
-  <div class="hori-frame-title shadow"><p><a href="#">照片1</a></p></div>
-  <div class="hori-frame sub-hori-frame fixed" id="banner-img-2" style="background-image: url('/assets/img/scroll-2.png');">
-    <img src="/assets/img/scroll-2.png">
-    <div class="hori-frame-title shadow"><p><a href="#">照片2</a></p></div>
+<div class="double-side-parent">
+  <div class="double-side">
+    <div class="hori-frame fixed" id="banner-img-1" style="background-image: url('/assets/img/scroll-1.png');">
+      <img src="/assets/img/scroll-1.png">
+      <div class="hori-frame-title shadow"></div>
+      <div class="hori-frame sub-hori-frame fixed" id="banner-img-2"
+        style="background-image: url('/assets/img/scroll-2.png');">
+        <img src="/assets/img/scroll-2.png">
+        <div class="hori-frame-title shadow"></div>
+      </div>
+      <div class="hori-frame sub-hori-frame fixed" id="banner-img-3"
+        style="background-image: url('/assets/img/scroll-3.png');">
+        <img src="/assets/img/scroll-3.png">
+        <div class="hori-frame-title shadow"></div>
+      </div>
+      <div class="hori-frame sub-hori-frame fixed" id="banner-img-4"
+        style="background-image: url('/assets/img/scroll-4.png');">
+        <img src="/assets/img/scroll-4.png">
+        <div class="hori-frame-title shadow"></div>
+      </div>
+      <i class="material-icons side left" onclick="mainPageBanner.left()">chevron_left</i>
+      <i class="material-icons side right" onclick="mainPageBanner.right()">chevron_right</i>
+    </div>
   </div>
-  <div class="hori-frame sub-hori-frame fixed" id="banner-img-3" style="background-image: url('/assets/img/scroll-3.png');">
-    <img src="/assets/img/scroll-3.png">
-    <div class="hori-frame-title shadow"><p><a href="#">照片3</a></p></div>
+  <div class="double-side">
+    <h2><i class="material-icons">article</i> 最新消息</h2>
+    <div id="article-parent">{{.ArticleListBrief}}</div>
   </div>
-  <div class="hori-frame sub-hori-frame fixed" id="banner-img-4" style="background-image: url('/assets/img/scroll-4.png');">
-    <img src="/assets/img/scroll-4.png">
-    <div class="hori-frame-title shadow"><p><a href="#">照片4</a></p></div>
-  </div>
-  <i class="material-icons side left" onclick="mainPageBanner.left()">chevron_left</i>
-  <i class="material-icons side right" onclick="mainPageBanner.right()">chevron_right</i>
 </div>
-
-<h2><i class="material-icons">article</i> 最新消息</h2>
-<div id="article-parent">{{.ArticleListBrief}}</div>
