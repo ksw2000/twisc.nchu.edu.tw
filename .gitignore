@@ -1,4 +1,6 @@
-upload/
+assets/upload/*
+!assets/upload/nonempty
+
 ~*.*
 assets/js/ckeditor
 .well-known/
@@ -9,3 +11,4 @@ assets/js/ckeditor
 *.db
 _*
 main
+
