@@ -51,6 +51,7 @@ func BasicWebHandler(w http.ResponseWriter, r *http.Request) {
 		"/academy":           "學術活動",
 		"/research":          "研究成果",
 		"/official-document": "辦法表格",
+		"/privacy-statement": "隱私權聲明",
 	}
 
 	// Handle simple web

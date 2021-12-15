@@ -21,6 +21,7 @@
   --deep-blue: #0b476f;
   --blue: #0391e0;
   --light-blue: #40dcff;
+  --light-light-blue: #96cce7;
   --gray-blue: #898f92;
   --blue-green: #208e95;
   --gray: #414141;
@@ -102,6 +103,7 @@ li {
   0% {
     transform: rotate(0deg);
   }
+
   100% {
     transform: rotate(360deg);
   }
@@ -192,12 +194,12 @@ footer {
 
 footer a {
   text-decoration: none;
-  color: var(--light-blue);
+  color: var(--light-light-blue);
   transition: color 500ms;
 }
 
 footer a:hover {
-  color: #b0dff6;
+  color: #fff;
 }
 
 footer li {
@@ -211,48 +213,46 @@ footer li {
   padding: 3px 0px;
 }
 
-footer table {
+footer .footer-row {
   border: 0px;
+  display: flex;
   margin: 0px auto;
   max-width: 900px;
   width: 100%;
 }
 
-footer table td, footer table th {
-  border: 0px;
-  background-color: transparent;
-}
-
-footer table tbody {
-  border: 0px;
-}
-
-footer table td {
-  display: table-cell;
+footer .footer-col {
   padding: 20px 15px;
   text-align: left;
   vertical-align: super;
   width: 50%;
 }
 
-footer table td img {
-  max-width: 250px;
-  width: 100%;
+footer .footer-col li {
+  margin: 5px 0px;
+}
+
+footer i.material-icons {
+  margin: 0px 5px 0px 0px;
 }
 
 @media screen and (max-width: 450px) {
   footer li, footer p, footer a {
     font-size: 13px;
   }
+
   h1 {
     font-size: 25px;
   }
+
   h2 {
     font-size: 20px;
   }
+
   h3 {
     font-size: 18px;
   }
+
   * {
     font-size: 14px;
   }
@@ -437,7 +437,7 @@ input[type="button"]:hover, button:hover {
 
 .candy-header span {
   display: inline-block;
-  font-size: 12px!important;
+  font-size: 12px !important;
   padding: 3px 7px;
 }
 
@@ -477,9 +477,9 @@ input[type="button"]:hover, button:hover {
 }
 
 .article h1 {
-  border-bottom: 0px!important;
-  color: var(--blue)!important;
-  font-size: 28px!important;
+  border-bottom: 0px !important;
+  color: var(--blue) !important;
+  font-size: 28px !important;
 }
 
 .article .draftIcon {
@@ -502,9 +502,10 @@ input[type="button"]:hover, button:hover {
 
 @media screen and (max-width: 700px) {
   .article .candy-header span {
-    font-size: 11px!important;
+    font-size: 11px !important;
     padding: 3px 5px;
   }
+
   .article .candy-header {
     margin: 2px 2px;
   }
@@ -692,11 +693,13 @@ nav #button-over-900px>ul>li>ul>li>a:hover {
     width: 100%;
     max-width: 200px;
   }
+
   nav #button-over-900px.show {
     left: 0px;
     opacity: 1;
     transition: left 500ms, opacity 500ms;
   }
+
   nav #button-over-900px>ul {
     /*--1F--*/
     box-sizing: content-box;
@@ -705,10 +708,12 @@ nav #button-over-900px>ul>li>ul>li>a:hover {
     height: 100%;
     overflow-y: auto;
   }
+
   nav #button-over-900px>ul li {
     display: block;
     margin: 0px 0px;
   }
+
   nav #button-over-900px>ul>li>ul {
     /*--2F--*/
     background: transparent;
@@ -717,6 +722,7 @@ nav #button-over-900px>ul>li>ul>li>a:hover {
     display: block;
     width: 100%;
   }
+
   nav #button-over-900px>ul li a {
     box-sizing: border-box;
     border: 0px;
@@ -726,11 +732,13 @@ nav #button-over-900px>ul>li>ul>li>a:hover {
     padding: 10px 20px 10px 20px;
     width: 100%;
   }
+
   nav #button-over-900px>ul>li>ul>li {
     border: 0px;
     background: transparent;
     width: 100%;
   }
+
   nav #button-over-900px>ul>li>ul>li>a {
     box-sizing: border-box;
     height: auto;
@@ -738,19 +746,23 @@ nav #button-over-900px>ul>li>ul>li>a:hover {
     padding: 10px 20px 10px 40px;
     /*-- more right than 1F--*/
   }
+
   nav #button-over-900px>ul>li>a>.arrow-down {
     display: none;
   }
+
   nav #button-less-900px {
     display: block;
   }
+
   nav #button-over-900px a:hover {
-    color: inherit!important;
+    color: inherit !important;
   }
+
   nav #button-over-900px>ul>li>ul>li>a:hover {
     background-color: var(--gray);
-    color: #fff!important;
-    transition: unset!important;
+    color: #fff !important;
+    transition: unset !important;
   }
 }
 
@@ -758,28 +770,35 @@ nav #button-over-900px>ul>li>ul>li>a:hover {
   body {
     padding-top: 50px
   }
+
   nav {
     height: 50px;
   }
+
   nav #fix-1200 {
     height: 50px;
   }
+
   nav #button-over-900px {
     top: 50px;
     padding: 0px 0px 50px 0px;
   }
+
   nav #logo {
     box-sizing: border-box;
     height: 50px;
   }
+
   nav #logo img {
     box-sizing: border-box;
     height: auto;
     margin: 0px auto;
   }
+
   nav #logo-less-450px {
     display: block;
   }
+
   nav #logo-over-450px {
     display: none;
   }
@@ -803,6 +822,7 @@ nav #button-over-900px>ul>li>ul>li>a:hover {
   0% {
     top: 200%;
   }
+
   100% {
     top: var(--nav-height);
   }
@@ -835,7 +855,7 @@ nav #button-over-900px>ul>li>ul>li>a:hover {
 }
 
 .calendar-title span, .calendar-title span {
-  font-size: 1.12rem!important;
+  font-size: 1.12rem !important;
 }
 
 .calendar-tail {
