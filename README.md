@@ -47,13 +47,13 @@
 ## Quick start
 
 1. Create database from /db/*.sql
-2. Create a new account
-
-    ```go
-    handler.NewAcount("user_id", "password", "userName")
+    + /db/calendar.db.sql
+    + /db/main.db.sql
+    ```sh
+    cat calendar.db.sql | sqlite3 calendar.db
+    cat main.db.sql | sqlite3 main.db
     ```
-
-3. run
+2. run
     ```sh
     # build
     $ go build main.go
@@ -67,3 +67,6 @@
     # disable minify static files
     $ ./main --debug
     ```
+3. default user
+    + id: root
+    + password: 00000000
