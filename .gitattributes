@@ -2,3 +2,4 @@
 * text=auto
 *.html linguist-detectable=false
 *.css linguist-detectable=false
+assets/js/ckeditor/** linguist-vendored
