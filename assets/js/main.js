@@ -190,7 +190,6 @@ function register() {
 // ----------------------------------- routing ---------------------------------
 // for rendering nav bar
 $(()=>{
-    console.log('haha');
     try {
         let url = window.location.pathname.split('/')[1];
         let domList = $('#nav-routing-wrapper li');
