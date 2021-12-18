@@ -22,19 +22,7 @@
   <script src="/assets/js/main.js?{{.Time}}"></script>
   <script>
     if (navigator.userAgent.search("Trident") > -1) {
-      if (confirm("該網站不不支援 Internet Explorer (IE)，請按確定以下載 Google Chrome")) {
-        document.location.href = "https://www.google.com/chrome/";
-      } else {
-        if (confirm("請按確定以下載 Opera")) {
-          document.location.href = "https://www.opera.com/";
-        } else {
-          if (confirm("請按確定以下載 Firefox")) {
-            document.location.href = "https://www.mozilla.org/firefox/new/";
-          } else {
-            document.location.href = "https://www.microsoft.com/zh-tw/edge";
-          }
-        }
-      }
+      alert("該網站不不支援 Internet Explorer (IE)，請使用其他瀏覽器瀏覽");
     }
   </script>
 </head>
@@ -94,17 +82,26 @@
     <footer>
       <div class="footer-row">
         <div class="footer-col">
-          <li><i class="material-icons">open_in_new</i><a target="_blank" href="//www.twisc.org/tw/">TWISC (資通安全研究與教學中心)</a></li>
-          <li><i class="material-icons">open_in_new</i><a target="_blank" href="//www.twisc.ntust.edu.tw/">TWISC@NTUST (台科大)</a></li>
-          <li><i class="material-icons">open_in_new</i><a target="_blank" href="//twisc.nctu.edu.tw/">TWISC@NYCU (陽明交通)</a></li>
-          <li><i class="material-icons">open_in_new</i><a target="_blank" href="//www.twisc.ncku.edu.tw/">TWISC@NCKU (成功大學)</a></li>
-          <li><i class="material-icons">open_in_new</i><a target="_blank" href="//twisc.ntu.edu.tw/">TWISC@NTU (台灣大學)</a></li>
-          <li><i class="material-icons">open_in_new</i><a target="_blank" href="//twisc.nsysu.edu.tw/">TWISC@NSYSU (中山大學)</a></li>
-          <li><i class="material-icons">open_in_new</i><a target="_blank" href="//twisc.cs.nthu.edu.tw/">TWISC@NTHU (清華大學)</a></li>
+          <li><i class="material-icons">open_in_new</i><a target="_blank" href="//www.twisc.org/tw/">TWISC
+              (資通安全研究與教學中心)</a></li>
+          <li><i class="material-icons">open_in_new</i><a target="_blank" href="//www.twisc.ntust.edu.tw/">TWISC@NTUST
+              (台科大)</a></li>
+          <li><i class="material-icons">open_in_new</i><a target="_blank" href="//twisc.nctu.edu.tw/">TWISC@NYCU
+              (陽明交通)</a></li>
+          <li><i class="material-icons">open_in_new</i><a target="_blank" href="//www.twisc.ncku.edu.tw/">TWISC@NCKU
+              (成功大學)</a></li>
+          <li><i class="material-icons">open_in_new</i><a target="_blank" href="//twisc.ntu.edu.tw/">TWISC@NTU
+              (台灣大學)</a></li>
+          <li><i class="material-icons">open_in_new</i><a target="_blank" href="//twisc.nsysu.edu.tw/">TWISC@NSYSU
+              (中山大學)</a></li>
+          <li><i class="material-icons">open_in_new</i><a target="_blank" href="//twisc.cs.nthu.edu.tw/">TWISC@NTHU
+              (清華大學)</a></li>
         </div>
         <div class="footer-col">
-          <li><i class="material-icons">school</i><a target="_blank" href="//www.nchu.edu.tw/">國立中興大學 National Chung Hsing University</a></li>
-          <li><i class="material-icons">map</i><a href="https://goo.gl/maps/o6CdAjuVmixDJHAY6">402 台中市南區興大路145號應用科技大樓3樓319室</a></li>
+          <li><i class="material-icons">school</i><a target="_blank" href="//www.nchu.edu.tw/">國立中興大學 National Chung
+              Hsing University</a></li>
+          <li><i class="material-icons">map</i><a href="https://goo.gl/maps/o6CdAjuVmixDJHAY6">402
+              台中市南區興大路145號應用科技大樓3樓319室</a></li>
           <li><i class="material-icons">email</i><a href="mailto:twiscnchu@nchu.edu.tw">twiscnchu@nchu.edu.tw</a></li>
           <li><i class="material-icons">call</i><a href="javascript:void(0);">Tel: (04)22840141 分機 319</a></li>
           <li><i class="material-icons">print</i><a href="javascript:void(0);">Fax: (04)22856203</a></li>
