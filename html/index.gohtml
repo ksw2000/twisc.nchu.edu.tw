@@ -1,48 +1,54 @@
 <script>
   // Banner
-  function Banner(list, time) {
+  function Banner(list, period) {
     this.index = 0;
     this.list = list;
     this.len = list.length;
-    this.time = time;
+    this.period = period;
+    this.timer = null;
     this.swap = (shift, resetTimer) => {
       new_index = (this.index + shift + this.len) % this.len;
       // reset
       if (new_index == 0) {
         $('#' + this.list[this.index]).fadeOut(800, () => {
-          $('#' + this.list[new_index]).fadeIn(800);
+          $('#' + this.list[new_index]).fadeIn(800, () => {
+            if (resetTimer) this.resetTimer();
+            this.index = new_index;
+          });
         });
       } else if (this.index === 0) {
-        $('#' + this.list[new_index]).fadeIn(800);
+        $('#' + this.list[new_index]).fadeIn(800, () => {
+          if (resetTimer) this.resetTimer();
+          this.index = new_index;
+        });
       } else {
         $('#' + this.list[this.index]).fadeOut(800);
-        $('#' + this.list[new_index]).fadeIn(800);
-      }
-      this.index = new_index;
-      if (resetTimer) {
-        this.clearTimer();
-        this.setTimer();
+        $('#' + this.list[new_index]).fadeIn(800, () => {
+          if (resetTimer) this.resetTimer();
+          this.index = new_index;
+        });
       }
     }
     this.left = () => this.swap(-1, true);
     this.right = () => this.swap(1, true);
 
-    this.timer = null;
-    this.clearTimer = () => {
-      if (timer) clearInterval(this.timer);
-    }
     this.setTimer = () => {
       this.timer = setInterval(() => {
         this.swap(1, false);
-      }, this.time);
+      }, this.period);
     }
 
-    if (this.time) {
+    this.resetTimer = () => {
+      if (this.timer) clearInterval(this.timer);
+      this.setTimer();
+    }
+
+    // constructor
+    if (this.period) {
       this.setTimer();
     }
   }
   var mainPageBanner = new Banner(['banner-img-1', 'banner-img-2', 'banner-img-3', 'banner-img-4'], 5000);
-
 </script>
 
 <div class="double-side-parent">
