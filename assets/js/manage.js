@@ -398,7 +398,7 @@ function edit_news(data_id) {
 }
 
 function artListRenderer(dataList){
-    if (dataList == null) return "沒有文章";
+    if (dataList == null) return "沒有消息";
     let ret = '';
     dataList.forEach((data) => {
         let isDraft = (data.publish === 0) ? true : false;
