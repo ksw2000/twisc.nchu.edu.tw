@@ -7,5 +7,7 @@ do
    sudo kill -9 $var
 done
 
+export PATH=$PATH:/usr/local/go/bin
 go build main.go
-nohup sudo ./main -p 80 &
+
+nohup sudo ./main -p 443 &
