@@ -31,6 +31,9 @@ func ApiHandler(w http.ResponseWriter, r *http.Request) {
 
 	if path == "/api/login" {
 		LoginHandler(w, r)
+	} else if path == "/api/pwd" {
+		// modify password
+		ModifyPwdHandler(w, r)
 	} else if path == "/api/reg" {
 		RegHandler(w, r)
 	} else if path == "/api/news" {
