@@ -10,4 +10,7 @@ done
 export PATH=$PATH:/usr/local/go/bin
 go build main.go
 
+ulimit -n 100000
+
 nohup sudo ./main -p 443 &
+echo $! > pid.txt
