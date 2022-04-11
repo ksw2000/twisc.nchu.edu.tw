@@ -1,4 +1,10 @@
 #!/bin/bash
+
+# build new program
+export PATH=$PATH:/usr/local/go/bin
+go build main.go
+
+# kill old program
 string=`ps -ef | grep "./main" | grep -v "grep" | tr -s " " | cut -d " " -f 2`
 array=(${string//,/ })
 
@@ -7,9 +13,7 @@ do
    sudo kill -9 $var
 done
 
-export PATH=$PATH:/usr/local/go/bin
-go build main.go
-
+# run new program
 ulimit -n 100000
 
 nohup sudo ./main -p 443 &
