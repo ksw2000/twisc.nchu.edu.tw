@@ -10,6 +10,15 @@ function keyEnter(e, callback) {
     if (keycode === 13 && callback) callback();
 }
 
+/**
+ * @param {string} lang enum{'zh', 'en'}
+ * @return void
+ */
+function switchLang(lang){
+    document.cookie = "lang=" + lang;
+    location.reload();
+}
+
 function renderAttachment(list) {
     ret = '';
     list.forEach(e => {
@@ -17,42 +26,6 @@ function renderAttachment(list) {
     });
     console.log(ret);
     return ret;
-}
-
-/**
- * interface calendar{
- *      id: number
- *      day: number
- *      month: number
- *      year: number     
- *      event: string
- *      link: string
- * } 
- */
-function renderCalendar(infoList, editMode) {
-    if (infoList && infoList.length > 0) {
-        let ret = '<div class="calendar">';
-        infoList.forEach(e => {
-            ret += '<div class="calendar-list">'
-            ret += `<div class="calendar-head candy-header"><span class="single cyan big">${e.month} / ${e.day}</span></div>`;
-            if (e.link) {
-                ret += `<div class="calendar-title"><a href="${e.link}">${e.event}</a></div>`;
-            } else {
-                ret += `<div class="calendar-title">${e.event}</div>`;
-            }
-            if (editMode) {
-                ret += ' <div class="calendar-tail">';
-                ret += `<i class="material-icons" onclick="btnEditCalendar(${e.id})" title="編輯">edit</i>`;
-                ret += `<i class="material-icons delete" onclick="btnDelCalendar(${e.id})" title="刪除">close</i>`;
-                ret += '</div>';
-            }
-            ret += '</div>';
-        });
-        ret += '</div>';
-        return ret;
-    }
-
-    return '無行程';
 }
 
 async function post(url, data) {
@@ -106,22 +79,6 @@ function openSideBar() {
     }
 }
 
-// --------------------------------- index page --------------------------------
-function loadCalendar(date, callback) {
-    $.get('/api/get_calendar', {
-        'year': date.getFullYear(),
-        'month': Number(date.getMonth()) + 1 // javascript month [0, 12)
-    }, (data) => {
-        if (data.err) {
-            notice(data.err);
-            console.log(data);
-            return;
-        }
-        if (callback) callback(data);
-    }, 'json');
-}
-
-// --------------------  http://localhost:9000/news?type=*----------------------
 /**
  * @param {string} scope enum{'public', 'public-with-type'}
  * @param {string} type enum{'normal', 'activity', 'course', 'scholarships', 'recruit'}
@@ -153,22 +110,22 @@ function loadNews(scope, type, from, to) {
 
 // --------------------------------- login page --------------------------------
 function login() {
-    const id = $("#login #id").val();
-    const pwd = $("#login #pwd").val();
+    const id = document.querySelector("#login #id").value;
+    const pwd = document.querySelector("#login #pwd").value;
     if (id === "" || pwd === "") {
         notice("帳號或密碼不可為空！");
         return;
     }
-    $.post('/api/login', {
+    post('/api/login', {
         id: id,
         pwd: pwd
-    }, (data) => {
+    }).then(data => {
         if (data.err) {
             notice(data.err);
         } else {
             window.location.href = "/manage";
         }
-    }, 'json');
+    });
 }
 
 // ---------------------------------- reg page ---------------------------------

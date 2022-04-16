@@ -1,0 +1,45 @@
+{{if .IsEn}}
+<h1>Development</h1>
+<h2>Designing and Implementing Next-Generation Smart Meters</h2>
+<ol>
+<li>Propose a new three-layer (Smart Meter-Concentrator-Meter Data Management System) smart meter security firmware
+update architecture and process. Use the encryption chip with IEC 62056-5-3:2017 Security Suite 1 to speed up the
+decryption time and reduce the computational burden of the electricity meter. It can do multi-party authentication,
+remote update and other work.</li>
+<li>Develop a high-efficiency detection system for analyzing the resistance to side-channel attacks of IoT devices,
+implementing countermeasures such as hiding and masking against side-channel attacks, and measure the resistance of
+these implementations to the latest deep learning attack methods.</li>
+</ol>
+
+<h2>Information security detection and protection mechanism of renewable energy equipment and systems</h2>
+<ol>
+<li>Aiming at the potential weaknesses and loopholes of renewable energy networking equipment and grid-connected systems,
+establish a set of renewable energy system information security testing procedures, and develop inverters and data
+collectors that comply with California Rule 21 information security standards.</li>
+<li>Implement the cryptographic protocols (TLS, AES, ECDHE, ECDSA, etc.) in IEEE 2030.5 on various platforms of the smart
+inverter to ensure the connection and data security of the renewable energy network when it communicates with the
+server.</li>
+</ol>
+
+<h2>Critical Infrastructure Honeynets and Intrusion Detection Systems</h2>
+<ol>
+<li>In cooperation with the National Information Communication Security Report Technology Service Center (NCCST) of the
+Executive Yuan, for the large amount of network traffic captured by NCCST, we can identify new types of attacks and
+predict attack types, thereby reducing the time cost of personnel detection and analysis, and quickly understand new
+attack methods and trends.</li>
+<li>Using industrial control equipment sensing data, combined with artificial intelligence and deep learning methods,
+develop an industrial control equipment data analysis system to predict the remaining useful lifetime of the equipment,
+abnormal detection and classification, as the basis for predictive maintenance scheduling.</li>
+</ol>
+{{else}}
+<h1>技術研發</h1>
+<h2>設計與實作下一世代智慧電表</h2>
+<p>提出一個新的三層式(智慧電表Smart Meter-集中器Concentrator-電表數據管理系統Meter Data Management System)智慧電表安全韌體更新架構與流程。使用具有IEC 62056-5-3:2017 Security Suite 1 的加密晶片，以加速解密時間並減輕電表運算負擔，可以做多方認證、遠端更新等工作。</p>
+<p>開發一套高效能解析物聯網裝置之旁通道攻擊抵禦能力的檢測系統，實作隱藏與掩碼等針對旁通道攻擊之抵禦對策，並實測這些實作對於最新深度學習攻擊法之抵禦效果。</p>
+<h2>再生能源設備與系統的資安檢測與防護機制</h2>
+<p>針對再生能源聯網設備與併網系統潛在的弱點與漏洞，建立一套再生能源系統資訊安全檢測流程，並研發符合California Rule 21資安規範的逆變器與資料收集器。</p>
+<p>將IEEE 2030.5中的密碼協定（TLS、AES、ECDHE、ECDSA等）實作在智慧逆變器的各種平台上，確保其和伺服器溝通時，再生能源網的連線與資料安全。</p>
+<h2>關鍵基礎設施蜜網與入侵偵測系統</h2>
+<p>與行政院國家資通安全會報技術服務中心(NCCST)合作，針對NCCST捕捉的大量網路流量，辨識新型態攻擊以及預測攻擊類型，進而降低人員檢測與分析的時間成本，並迅速了解新的攻擊方法與趨勢。</p>
+<p>使用工業控制設備感測資料，結合人工智慧與深度學習方法，開發工控設備數據分析系統，預測設備的剩餘可用壽命、異常偵測與分類，作為預兆式維護保養排程的依據。</p>
+{{end}}

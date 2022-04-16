@@ -1,4 +1,33 @@
-<h1>關於</h1>
+<!--for render member card-->
+<link rel="stylesheet" type="text/css" href="/assets/style/member.css?202204161132">
+
+{{if .IsEn}}
+<h1>Introduction</h1>
+<h2>About TWISC@NCHU</h2>
+<p>The Taiwan Information Security Center (TWISC) was established on April 1, 2006. It mainly integrates the resources of
+domestic universities and research institutions to strengthen the research and development of National Information
+Security.</p>
+<p>TWISC@NCHU is a sub-center of TWISC. Since January 1, 2015, it has participated in the deep cultivation of fundamental
+industrial technology projects funded by the Ministry of Science and Technology. The rise of the Internet of Things has
+attracted much attention from the industry, commerce and academia, and maintaining the security between its endpoints
+has become a challenging research topic. The short-term goal of TWISC@NCHU is to develop the foundation of key
+technologies for information security. The preliminary plan focuses on the development of next-generation smart meters,
+the information security detection and protection mechanism of renewable energy equipment and systems, and the
+interactive dense network and intrusion detection system for key infrastructure, then gradually expand to other critical
+information infrastructure. The medium and long-term goal is to develop forward-looking information security technology.
+Currently, the main research topics are "PUFs in the AIoT Age: Design Methods and Applications" and "A Proposal of
+Active Reconnaissance and Defense System in Smart Manufacturing".</p>
+<p>TWISC@NCHU was established in line with the development of the national "Information Security is National Security"
+strategy, and to strengthen the teaching, research, promotion and service needs of information security.</p>
+<p>The tasks are as follows:</p>
+<ol>
+  <li>Strengthen information security academic and R&D capabilities.</li>
+  <li>Promote industry-university research cooperation on information security.</li>
+  <li>Promote international cooperation and exchange on information security.</li>
+  <li>Cultivation and education promotion of information security talents.</li>
+</ol>
+{{else}}
+<h1>關於中心</h1>
 <h2>中心簡介</h2>
 <p>資通安全研究與教學中心(Taiwan Information Security Center，簡稱TWISC)於2006年4月1日成立，主要整合國內各大學及研究機構的資源，以強化國家資通安全之研究與發展。</p>
 <p>
@@ -12,11 +41,103 @@
   <li>促進資通安全國際合作與交流。</li>
   <li>資通安全人才之培育與教育推廣。</li>
 </ol>
+{{end}}
 
+{{if .IsEn}}
+<h2>Team</h2>
+<h3>Research team of Hardware Information Security</h3>
+<ul>
+  <li>Professor Sying-Jyan Wang, Department of Computer Science and Engineering, National Chung Hsing University</li>
+  <li>Professor Katherine Shu-Min Li, Department of Computer Science and Engineering, National Sun Yat-sen University</li>
+  <li>Professor Tsung-Yi Ho, Department of Computer Science, National Tsing Hua University</li>
+  <li>Associate Professor Wei-Chih Hong, Department of Information Engineering and Computer Science of Feng Chia University</li>
+</ul>
+<h3>Research team of Industrial Control Information Security</h3>
+<ul>
+  <li>Professor Iuon-Chang Lin, Department of Management Information Systems, National Chung Hsing University</li>
+  <li>Associate Professor Huan Chen, Department of Computer Science and Engineering, National Chung Hsing University</li>
+  <li>Associate Professor Yao-Chung Fan, Department of Computer Science and Engineering, National Chung Hsing University</li>
+  <li>Assistant Professor Shu-Yu Kuo, Department of Computer Science and Engineering, National Chung Hsing University</li>
+  <li>Assistant Professor Jason Lin, Department of Computer Science and Engineering, National Chung Hsing University</li>
+</ul>
+<h3>Administrative team</h3>
+<div class="card-group">
+  <blockquote class="card">
+    <div class="profile">
+      <p id="name"><b>Professor Sying-Jyan Wang</b></p>
+    </div>
+    <div id="separate"></div>
+    <ul>
+      <li>
+        <span><i class="material-icons">person</i>Center Director</span>
+      </li>
+      <li>
+        <span><i class="material-icons">email</i><a href="mailto:sjwang@cs.nchu.edu.tw">sjwang@cs.nchu.edu.tw</a></span>
+      </li>
+      <li>
+        <span><i class="material-icons">phone_forwarded</i>04-22840141</span>
+      </li>
+    </ul>
+  </blockquote>
+  <blockquote class="card">
+    <div class="profile">
+      <p id="name"><b>Chien-Lung Wang</b><br><span>Postdoc fellow</span></p>
+    </div>
+    <div id="separate"></div>
+    <ul>
+      <li>
+        <span><i class="material-icons">person</i>Research Fellow</span>
+      </li>
+      <li>
+        <span><i class="material-icons">email</i><a href="mailto:kevinwang@nchu.edu.tw">kevinwang@nchu.edu.tw</a></span>
+      </li>
+      <li>
+        <span><i class="material-icons">phone_forwarded</i>04-22840141#373</span>
+      </li>
+    </ul>
+  </blockquote>
+
+  <blockquote class="card">
+    <div class="profile">
+      <p id="name"><b>Cun-Tsai Chien</b><br><span>Postdoc fellow</span></p>
+    </div>
+    <div id="separate"></div>
+    <ul>
+      <li>
+        <span><i class="material-icons">person</i>研究人員</span>
+      </li>
+      <li>
+        <span><i class="material-icons">email</i><a
+            href="mailto:sayoung2005@nchu.edu.tw">sayoung2005@nchu.edu.tw</a></span>
+      </li>
+      <li>
+        <span><i class="material-icons">phone_forwarded</i>04-22840141#374</span>
+      </li>
+    </ul>
+  </blockquote>
+
+  <blockquote class="card">
+    <div class="profile">
+      <p id="name"><b>Ms. Hsueh-Ju Liao</b></p>
+    </div>
+    <div id="separate"></div>
+    <ul>
+      <li>
+        <span><i class="material-icons">person</i>Administrative Staff</span>
+      </li>
+      <li>
+        <span><i class="material-icons">email</i><a href="mailto:xrl@nchu.edu.tw">xrl@nchu.edu.tw</a></span>
+      </li>
+      <li>
+        <span><i class="material-icons">phone_forwarded</i>04-22840141#319</span>
+      </li>
+    </ul>
+  </blockquote>
+</div>
+{{else}}
 <h2>中心成員</h2>
 <img src="/assets/img/about-structure.png" style="max-width: 1200px; width: 100%;">
-<h3>核心成員</h3>
-<h4>「硬體資安」研究團隊</h4>
+<h3>「硬體資安」研究團隊</h3>
 <ul>
   <li>中興大學資工系王行健 教授</li>
   <li>中山大學資工系李淑敏 教授</li>
@@ -24,7 +145,7 @@
   <li>逢甲大學資工系洪維志 副教授</li>
 </ul>
 
-<h4>「工控資安」研究團隊</h4>
+<h3>「工控資安」研究團隊</h3>
 <ul>
   <li>中興大學資管系林詠章 教授</li>
   <li>中興大學資工系陳 煥 副教授</li>
@@ -34,7 +155,6 @@
 </ul>
 
 <h3>行政團隊</h3>
-<link rel="stylesheet" type="text/css" href="/assets/style/member.css?202109131207">
 <div class="card-group">
   <blockquote class="card">
     <div class="profile">
@@ -66,7 +186,7 @@
         <span><i class="material-icons">email</i><a href="mailto:kevinwang@nchu.edu.tw">kevinwang@nchu.edu.tw</a></span>
       </li>
       <li>
-        <span><i class="material-icons">phone_forwarded</i>04-22840141分機373</span>
+        <span><i class="material-icons">phone_forwarded</i>04-22840141#373</span>
       </li>
     </ul>
   </blockquote>
@@ -85,7 +205,7 @@
             href="mailto:sayoung2005@nchu.edu.tw">sayoung2005@nchu.edu.tw</a></span>
       </li>
       <li>
-        <span><i class="material-icons">phone_forwarded</i>04-22840141分機374</span>
+        <span><i class="material-icons">phone_forwarded</i>04-22840141#374</span>
       </li>
     </ul>
   </blockquote>
@@ -103,8 +223,9 @@
         <span><i class="material-icons">email</i><a href="mailto:xrl@nchu.edu.tw">xrl@nchu.edu.tw</a></span>
       </li>
       <li>
-        <span><i class="material-icons">phone_forwarded</i>04-22840141分機319</span>
+        <span><i class="material-icons">phone_forwarded</i>04-22840141#319</span>
       </li>
     </ul>
   </blockquote>
 </div>
+{{end}}

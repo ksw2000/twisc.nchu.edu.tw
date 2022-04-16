@@ -155,7 +155,7 @@ func RenderPublicArticleBriefList(artInfoList []Article) template.HTML {
 	return template.HTML(ret)
 }
 
-func RenderIndexPage() template.HTML {
+func RenderIndexPage(lang int) template.HTML {
 	t, err := template.ParseFiles(indexTemplate)
 	if err != nil {
 		log.Println("handler/renderer.go RenderIndexPage() template error " + err.Error())
@@ -167,8 +167,10 @@ func RenderIndexPage() template.HTML {
 	var buf bytes.Buffer
 	t.Execute(&buf, struct {
 		ArticleListBrief template.HTML
+		IsEn             bool
 	}{
 		ArticleListBrief: RenderPublicArticleBriefList(artList),
+		IsEn:             lang == EN,
 	})
 	return template.HTML(buf.String())
 }

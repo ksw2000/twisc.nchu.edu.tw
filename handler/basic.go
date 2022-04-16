@@ -17,6 +17,8 @@ type PageData struct {
 	Main    template.HTML
 	Time    int64
 	Year    int
+	IsEn    bool
+	IsZh    bool
 }
 
 func initPageData() *PageData {
@@ -42,30 +44,63 @@ func BasicWebHandler(w http.ResponseWriter, r *http.Request) {
 	// Handle simple web and check login info
 	data := initPageData()
 
+	var twisc string
+	// Get language
+	langCode := lang(r)
+	if langCode == ZH {
+		data.IsZh = true
+		twisc = "國立中興大學資通安全研究與教學中心"
+	} else if langCode == EN {
+		data.IsEn = true
+		twisc = "Taiwan Information Security Center @NCHU"
+	}
+
 	user := CheckLoginBySession(w, r)
 	data.IsLogin = user != nil
 
-	var simpleWeb = map[string]string{
-		"/about":             "關於",
-		"/technic":           "技術研發",
-		"/academy":           "學術活動",
-		"/research":          "研究成果",
-		"/official-document": "辦法表格",
-		"/privacy-statement": "隱私權聲明",
+	var simpleWeb = map[string]map[int]string{
+		"/about": {
+			ZH: "關於",
+			EN: "About",
+		},
+		"/development": {
+			ZH: "技術研發",
+			EN: "Development",
+		},
+		"/events": {
+			ZH: "學術活動",
+			EN: "Events",
+		},
+		"/research": {
+			ZH: "研究成果",
+			EN: "Research Findings",
+		},
+		"/official-document": {
+			ZH: "辦法表格",
+			EN: "Official Document",
+		},
+		"/privacy-statement": {
+			ZH: "隱私權聲明",
+			EN: "Privacy Statement",
+		},
 	}
 
 	// Handle simple web
 	if title, ok := simpleWeb[r.URL.Path]; ok {
-		data.Title = title
+		data.Title = title[langCode]
 	} else {
 		// Handle non simple web
 		switch r.URL.Path {
 		case "/":
-			data.Title = "國立中興大學資通安全研究與教學中心"
+			data.Title = twisc
 			data.Isindex = true
-			data.Main = RenderIndexPage()
+			data.Main = RenderIndexPage(langCode)
 		case "/news":
-			data.Title = "最新消息"
+			if langCode == ZH {
+				data.Title = "最新消息"
+			} else {
+				data.Title = "News"
+			}
 
 			if id := strings.Join(r.Form["id"], ""); id != "" {
 				aid, err := strconv.ParseInt(id, 10, 64)
@@ -88,10 +123,10 @@ func BasicWebHandler(w http.ResponseWriter, r *http.Request) {
 					return
 				}
 
-				data.Title = artInfo.Title + " | 國立中興大學資通安全研究與教學中心"
+				data.Title = artInfo.Title + " | " + twisc
 				data.Main = RenderPublicArticle(artInfo)
 			} else {
-				data.Title += " | 國立中興大學資通安全研究與教學中心"
+				data.Title += " | " + twisc
 				data.Main, _ = getHTML(r.URL.Path)
 			}
 		case "/login":
@@ -119,8 +154,8 @@ func BasicWebHandler(w http.ResponseWriter, r *http.Request) {
 	}
 
 	if r.URL.Path != "/" && r.URL.Path != "/news" {
-		data.Title += " | 國立中興大學資通安全研究與教學中心"
-		data.Main, _ = getHTML(r.URL.Path)
+		data.Title += " | " + twisc
+		data.Main, _ = getHTMLwithLang(r.URL.Path, langCode)
 	}
 
 	t, _ := template.ParseFiles("./html/layout.gohtml")

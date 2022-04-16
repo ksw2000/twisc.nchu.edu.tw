@@ -76,7 +76,11 @@
     </div>
   </div>
   <div class="double-side">
+    {{if .IsEn}}
+    <h2><i class="material-icons">article</i> News</h2>
+    {{else}}
     <h2><i class="material-icons">article</i> 最新消息</h2>
+    {{end}}
     <div id="article-parent">{{.ArticleListBrief}}</div>
   </div>
 </div>

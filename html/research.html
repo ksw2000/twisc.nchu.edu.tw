@@ -1,13 +1,26 @@
+{{if .IsEn}}
+<h1>Research Findings</h1>
+{{else}}
 <h1>研究成果</h1>
+{{end}}
 <div class="scroll-table">
   <table>
     <thead>
+      {{if .IsEn}}
+      <tr>
+        <th>Date</th>
+        <th>Author/Presenter</th>
+        <th>Article</th>
+        <th>Journal</th>
+      </tr>
+      {{else}}
       <tr>
         <th>發表日期</th>
         <th>發表人</th>
         <th>名稱</th>
         <th>期刊名稱及期數/出版社</th>
       </tr>
+      {{end}}
     </thead>
     <tbody>
       <tr>
