@@ -316,8 +316,6 @@ function real_delete_news(data_id) {
 }
 
 function edit_news(data_id) {
-    //if(leave_editing()){
-    // 將原來收起來的區域展開
     openNewArticleArea();
     if ($('.article[data-id="' + Editor.aid + '"]').length) {
         $('.article[data-id="' + Editor.aid + '"]').slideDown();
@@ -393,8 +391,6 @@ function edit_news(data_id) {
         },
         dataType: 'json'
     });
-    //}
-    // DO NOTHING
 }
 
 function artListRenderer(dataList){
