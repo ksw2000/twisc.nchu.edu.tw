@@ -2,14 +2,14 @@
   font-family: 'NotoSans';
   font-style: normal;
   font-weight: normal;
-  src: local("NotoSans")， url('/assets/fonts/NotoSans-Regular') format("woff"),
+  src: local("NotoSans"), url('/assets/fonts/NotoSans-Regular') format("woff"),
 }
 
 @font-face {
   font-family: 'Noto Sans CJK TC';
   font-style: normal;
   font-weight: normal;
-  src: local("Noto Sans CJK TC")， url('/assets/fonts/NotoSansTC-Regular') format("woff"),
+  src: local("Noto Sans CJK TC"), url('/assets/fonts/NotoSansTC-Regular') format("woff"),
 }
 
 * {
@@ -579,7 +579,7 @@ nav #button-less-900px i {
 
 nav #button-over-900px ul {
   display: flex;
-  justify-content: space-around;
+  justify-content: flex-start;
   margin: 0px;
   padding: 0px;
   width: 100%;
