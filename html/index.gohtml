@@ -52,7 +52,11 @@
 </script>
 
 <div class="double-side-parent">
+  {{if .IsEn}}
+  <div class="double-side" style="width:100%;">
+  {{else}}
   <div class="double-side">
+  {{end}}
     <div class="hori-frame fixed" id="banner-img-1" style="background-image: url('/assets/img/scroll-1.png');">
       <img src="/assets/img/scroll-1.png">
       <div class="hori-frame-title shadow"></div>
@@ -75,12 +79,11 @@
       <i class="material-icons side right" onclick="mainPageBanner.right()">chevron_right</i>
     </div>
   </div>
+  {{if .IsEn}}
+  {{else}}
   <div class="double-side">
-    {{if .IsEn}}
-    <h2><i class="material-icons">article</i> News</h2>
-    {{else}}
     <h2><i class="material-icons">article</i> 最新消息</h2>
-    {{end}}
     <div id="article-parent">{{.ArticleListBrief}}</div>
   </div>
+  {{end}}
 </div>
