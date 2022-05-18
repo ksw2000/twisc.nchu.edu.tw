@@ -686,7 +686,7 @@ nav #button-over-900px>ul>li>ul>li>a:hover {
     left: -200px;
     margin: 0px;
     opacity: 0;
-    padding: 0px 0px 80px 0px;
+    padding: 0px 0px var(--nav-height) 0px;
     position: fixed;
     top: var(--nav-height);
     transition: left 500ms, opacity 500ms;
