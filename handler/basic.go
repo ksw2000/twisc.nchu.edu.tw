@@ -83,6 +83,9 @@ func BasicWebHandler(w http.ResponseWriter, r *http.Request) {
 			ZH: "隱私權聲明",
 			EN: "Privacy Statement",
 		},
+		"/ncsu-cloud": {
+			ZH: "資通安全弱點通報機制",
+		},
 	}
 
 	// Handle simple web
