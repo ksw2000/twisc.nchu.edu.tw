@@ -31,6 +31,9 @@
         height: 1px;
         background-color: #fff;
       }
+      .text-underline.color-blue::after{
+        background-color: #8bebfc;
+      }
 
       body{
         position: relative;
@@ -358,6 +361,12 @@
         #web-footer .footer-logo{width: 200px;}
         #web-content h4{padding-left: 8px;}
       }
+
+      /* 覆蓋原網頁屬性 */
+      #main{max-width: 100%;padding:0px;}
+      h1{width:100%;}
+      h2,h3{color: #fff;}
+      table{max-width: 100%;}
     </style>
   </head>
   <body class="smooth-scrollbar">
@@ -427,13 +436,13 @@
           <p class="wow animate__fadeIn">
             因應資通安全管理法實施細則第六條第六款、第六條第七款，機關應盤點資通系統、建立相關風險評估機制。
             <br/>
-            依 110年8月23日 頒布之「資通安全責任等級分級辦法」修正條文，<span class="text-underline">C級</span>公務與非公務機關需於 <span class="text-underline">民國112年8月23日</span> 內完成 VANS 通報機制。
+            依 110年8月23日 頒布之「資通安全責任等級分級辦法」修正條文，<span class="text-underline">C級</span>公務與非公務機關需於 <span class="text-underline color-blue font-bold" style="font-size: 2em;">民國112年8月23日</span> 內完成 VANS 通報機制。
           </p>
         </div>
         <div class="content-block">
           <h3 class="wow animate__fadeIn">導入單位</h3>
           <p class="wow animate__fadeIn">
-            C級學校-高中職<br/>
+            C級學校-高中職(包含但不侷限)<br/>
             資訊組長 / 系統管理師 / 資安管理人員
           </p>
         </div>
@@ -487,7 +496,7 @@
           <ul class="wow animate__fadeIn list-disc">
             <li><b>日&emsp;&emsp;期</b>：2022年10月28日 (五)</li>
             <li><b>時&emsp;&emsp;間</b>：14:00 - 16:00 (2小時)</li>
-            <li><b>地&emsp;&emsp;點</b>：國立中興大學 工學院大樓 階梯教室
+            <li><b>地&emsp;&emsp;點</b>：國立中興大學 應用科技大樓 3樓 336教室
               <a 
                 href="https://www.google.com/maps/place/%E5%9C%8B%E7%AB%8B%E4%B8%AD%E8%88%88%E5%A4%A7%E5%AD%B8/@24.123552,120.675326,15z/data=!4m5!3m4!1s0x0:0xe28afadc0dad203a!8m2!3d24.123552!4d120.675326"
                 title="Google Map: 台中市南區興大路145號"
@@ -495,9 +504,36 @@
               >(台中市南區興大路145號)</a>
             </li>
             <li><b>主辦單位</b>：國立中興大學 資通安全研究與教學中心</li>
-            <li><b>聯絡人員</b>：陳偉綸</li>
-            <li><b>電&emsp;&emsp;話</b>：
-              <a href="tel:+886-4-22840141" title="(04)22840141">(04)22840141</a> 分機 : 320
+            <li><b>協辦單位</b>：產學研鏈結中心 國際產學聯盟</li>
+            <li><b>聯絡人員</b>：陳韋綸</li>
+            <li><b>電&emsp;&emsp;話</b>：<a 
+                href="tel:+886-4-22840141" 
+                title="(04)22840141"
+              >(04)22840141</a> 分機 : 320
+            </li>
+            <li><b>聯絡信箱</b>：<a 
+                href="mailto:twiscnchu@nchu.edu.tw" 
+                title="twiscnchu@nchu.edu.tw"
+              >twiscnchu@nchu.edu.tw</a>
+            </li>
+            <li>
+              <b>報名連結</b>：<a 
+                href="https://docs.google.com/forms/d/e/1FAIpQLScvDr3QIHUbu2tURprrF3pw8-TEJbR7ZUTSlABOJABWTajsnA/viewform" 
+                title="Google報名表單"
+                target="_blank"
+              >Google報名表單</a>
+            </li>
+            <li>
+              <b>&emsp;&emsp;&emsp;&emsp;&emsp;</b><a 
+                href="https://docs.google.com/forms/d/e/1FAIpQLScvDr3QIHUbu2tURprrF3pw8-TEJbR7ZUTSlABOJABWTajsnA/viewform" 
+                title="Google報名表單"
+                target="_blank"
+              ><img 
+                  src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJQAAACUCAYAAAB1PADUAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAlCSURBVHhe7ZLBjlwxDMP6/z/dXgPCCCEomZ22IcCTZK/fbH79fjwO8h7U4yjvQT2O8h7U4yjvQT2O8h7U4yjvQT2O8h7U4yjvQT2O8h7U4yjvQT2O8h7U4yjvQT2O8h7U4yjvQT2O8h7U4yj1g/r169dHTbH5Nifs05Rpx01b6g3TUTdNsfk2J+zTlGnHTVvqDdNRN02x+TYn7NOUacdNW+oN01E3TbH5Nifs05Rpx01b6g2nDyK2n3kqsdyweeaUWN5yen+94fRBxPYzTyWWGzbPnBLLW07vrzecPojYfuapxHLD5plTYnnL6f31htMHEdvPPJVYbtg8c0osbzm9v95gBzE3ieUG503jdp/YPHOTWJ5Sb7CDmJvEcoPzpnG7T2yeuUksT6k32EHMTWK5wXnTuN0nNs/cJJan1BvsIOYmsdzgvGnc7hObZ24Sy1PqDXYQc5NYbtg8c9oy7Vw1rM/cJJan1BvsIOYmsdyweea0Zdq5alifuUksT6k32EHMTWK5YfPMacu0c9WwPnOTWJ5Sb7CDmJvEcsPmmdOWaeeqYX3mJrE8pd5gBzE3SZsbnKfGNJNoWJ+5SSxPqTfYQcxN0uYG56kxzSQa1mduEstT6g12EHOTtLnBeWpMM4mG9ZmbxPKUeoMdxNwkbW5wnhrTTKJhfeYmsTyl3nD6IJLuT/sG91GS5pRY3nJ6f73h9EEk3Z/2De6jJM0psbzl9P56w+mDSLo/7RvcR0maU2J5y+n99YbTB5F0f9o3uI+SNKfE8pbT++sNPOi25H/Lb9tSb5iOuin53/LbttQbpqNuSv63/LYt9YbpqJuS/y2/bUu/4cuxH8xyg/Pmv857UJIbnDf/dd6DktzgvPmv8x6U5AbnzX+d+gvtB7ud/+2035fOp/2UeqMdeDv/22m/L51P+yn1Rjvwdv63035fOp/2U+qNduDt/G+n/b50Pu2n1Bt5IDWmmVViOWE/NSWdt77l5HbfqDfwIGpMM6vEcsJ+ako6b33Lye2+UW/gQdSYZlaJ5YT91JR03vqWk9t9o97Ag6gxzawSywn7qSnpvPUtJ7f7Rr2BB5nGNNPYku5jn6ZMO3aSqbOzpd4wHbXTmGYaW9J97NOUacdOMnV2ttQbpqN2GtNMY0u6j32aMu3YSabOzpZ6w3TUTmOaaWxJ97FPU6YdO8nU2dlSb7CD0pySqZNIps5Ow/qWE+tbTtJ+Sr3RDkxzSqZOIpk6Ow3rW06sbzlJ+yn1RjswzSmZOolk6uw0rG85sb7lJO2n1BvtwDSnZOokkqmz07C+5cT6lpO0n1Jv5IGtZOo0pqTzp/uWE+szpy31humoRjJ1GlPS+dN9y4n1mdOWesN0VCOZOo0p6fzpvuXE+sxpS71hOqqRTJ3GlHT+dN9yYn3mtKXfAKYjV1umnaspNv/p3DRu941+A+CBtGXauZpi85/OTeN23+g3AB5IW6adqyk2/+ncNG73jX4D4IG0Zdq5mmLzn85N43bf6DeE8ANSb5P+PeunOU2xeea0pd8QMn1E4m3Sv2f9NKcpNs+ctvQbQqaPSLxN+vesn+Y0xeaZ05Z+Q8j0EYm3Sf+e9dOcptg8c9pSb5iO2mmk/W8jvZ/9VNLmLfVGHmgaaf/bSO9nP5W0eUu9kQeaRtr/NtL72U8lbd5Sb+SBppH2v430fvZTSZu3XP+P8QNaydRJ/DamG3eSNKct13/R6ehGMnUSv43pxp0kzWnL9V90OrqRTJ3Eb2O6cSdJc9py/Redjm4kUyfx25hu3EnSnLZc/0XtYOY0ZdqxSqbOqjHN3NSYZlaJ5Sn9BsEOZk5Tph2rZOqsGtPMTY1pZpVYntJvEOxg5jRl2rFKps6qMc3c1JhmVonlKf0GwQ5mTlOmHatk6qwa08xNjWlmlVie0m8AdmCaU8P6zCmxnLBPjWlmZ8q0Y7Wl3wDswDSnhvWZU2I5YZ8a08zOlGnHaku/AdiBaU4N6zOnxHLCPjWmmZ0p047Vln4DsAPTnBrWZ06J5YR9akwzO1OmHast9Yb0IPbpp5luuCk5nVNieUu9MT2QffppphtuSk7nlFjeUm9MD2SffprphpuS0zkllrfUG9MD2aefZrrhpuR0TonlLcc38mBqTDOrhvWZU2I5sT7z0/40xy+YPnLVmGZWDeszp8RyYn3mp/1pjl8wfeSqMc2sGtZnTonlxPrMT/vTHL9g+shVY5pZNazPnBLLifWZn/an+fkLStIf9HSfeWuKzTM3W/oNP0z6g5zuM29NsXnmZku/4YdJf5DTfeatKTbP3GzpN/ww6Q9yus+8NcXmmZst9YbpqJum2DxzalifuUnSnJKps9pSb5iOummKzTOnhvWZmyTNKZk6qy31humom6bYPHNqWJ+5SdKckqmz2lJvmI66aYrNM6eG9ZmbJM0pmTqrLfWG0weRdD/7lFhOrM88NWXasWqkfaPecPogku5nnxLLifWZp6ZMO1aNtG/UG04fRNL97FNiObE+89SUaceqkfaNesPpg0i6n31KLCfWZ56aMu1YNdK+UW+wg5ibpM1J2r8N72lNaedJvcEOYm6SNidp/za8pzWlnSf1BjuIuUnanKT92/Ce1pR2ntQb7CDmJmlzkvZvw3taU9p5Um+wg5ibxHLy6b55mulvrJKps7Ol3mAHMTeJ5eTTffM0099YJVNnZ0u9wQ5ibhLLyaf75mmmv7FKps7OlnqDHcTcJJaTT/fN00x/Y5VMnZ0t9QY7iLlJ0pySqZNoTDOJxjSz00j7Rr3BDmJukjSnZOokGtNMojHN7DTSvlFvsIOYmyTNKZk6icY0k2hMMzuNtG/UG+wg5iZJc0qmTqIxzSQa08xOI+0b9YbTB5FP76ckzVPJ1NlppP2UeuP1Az+8n5I0TyVTZ6eR9lPqjdcP/PB+StI8lUydnUbaT6k3Xj/ww/spSfNUMnV2Gmk/pd7IA29LLCdpn9h8mlMydXYa08xqS71hOuqmxHKS9onNpzklU2enMc2sttQbpqNuSiwnaZ/YfJpTMnV2GtPMaku9YTrqpsRykvaJzac5JVNnpzHNrLb0Gx6PhfegHkd5D+pxlPegHkd5D+pxlPegHkd5D+pxlPegHkd5D+pxlPegHkd5D+pxlPegHkd5D+pxlPegHkd5D+pxlPegHgf5/fsPDVqH283a2FsAAAAASUVORK5CYII=" 
+                  alt="掃描QRCode前往報名連結"
+                  style="width: 200px; height: auto;"
+                />
+              </a>
             </li>
           </ul>
         </div>
