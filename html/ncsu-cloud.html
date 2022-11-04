@@ -34,6 +34,8 @@
       .text-underline.color-blue::after{
         background-color: #8bebfc;
       }
+      .list-desc{list-style:desc;}
+      .mt-4{margin-top: 16px;}
 
       body{
         position: relative;
@@ -196,6 +198,14 @@
       #web-content ul.line-list li{margin-bottom: 36px;}
       #web-content h4{padding-left: 16px;margin-bottom: 8px;}
       #web-content li p{padding-left: 16px;}
+      #web-content h4.step-title{
+        margin-top: 16px;
+        text-shadow: none;
+        background-color: #13adca;
+        display: inline-block;
+        padding: 8px 16px;
+        border-radius: 4px;
+      }
 
       .li-line{
         position: absolute;
@@ -301,12 +311,116 @@
       .service-right-gradient{
         position: absolute;
         right: -30%;
-        top: 80%;
+        top: 100%;
         width: 800px;
         height: 800px;
         opacity: .7;
       }
+
+      .history-wrap{
+        position: relative;
+        margin-top: 48px;
+        margin-bottom: 24px;
+      }
+      .history-wrap.small-wrap{
+        margin-top: 0;
+        margin-left: 48px;
+        margin-bottom: 4px;
+      }
+      .history-wrap.small-wrap li{
+        font-size: 14px;
+      }
+      #web-content .history-wrap h4{
+        position: absolute;
+        left: -48px;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 14px;
+        letter-spacing: 0;
+        display: inline-block;
+        margin-bottom: 0;
+        padding: 4px 40px 4px 12px;
+        text-shadow: none;
+        background-color: #047186;
+        color: #fff;
+      }
+      #web-content .latest-wrap h4{
+        background-color: #8bebfc;
+        color: #001533;
+      }
+      #web-content .history-wrap ul{
+        border: 1px solid rgba(4,113,134,0.9);
+        background-color: rgba(4,113,134,0.1);
+        border-radius: 0 4px 4px 0;
+        padding: 24px 48px;
+        margin: 0;
+      }
+      #web-content .latest-wrap ul{
+        border-color: rgba(139,239,252,0.5);
+        background-color: rgba(139,239,252,0.15);
+      }
+      #web-content .history-wrap ul li:last-child{
+        margin-bottom: 0;
+      }
       
+      #history-container{
+        display: block;
+      }
+      #history-container.hide{
+        display: none;
+      }
+      #history-btn{
+        padding: 16px 48px;
+        background-color: #047186;
+        color: #fff;
+        border: none;
+        outline: none;
+        border-radius: 30px;
+        font-size: 12px;
+        letter-spacing: 1px;
+        cursor: pointer;
+        transition: .3s;
+      }
+      #history-btn:hover{
+        background-color: #289bb3;
+      }
+      ul.step-list{
+        display: flex;
+        align-content: center;
+        justify-content: space-between;
+      }
+      ul.step-list > li{
+        position: relative;
+        width: 30%;
+        padding: 16px;
+        border-radius: 12px;
+        background-color: #13adca;
+        color: #fff;
+        display: inline-flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+        font-size: 20px;
+      }
+      ul.step-list > li > span{
+        width: 100%;
+        text-align: center;
+        font-size: .7em;
+        color: #ccf7ff;
+      }
+      
+      ul.step-list > li:not(:last-child)::after{
+        content: '';
+        position: absolute;
+        left: 106%;
+        top: 50%;
+        border: solid #fff;
+        border-width: 0px 3px 3px 0;
+        display: inline-block;
+        padding: 3px;
+        transform: translate(0,-50%) rotate(-45deg);
+      }
 
       @keyframes ring {
         from {transform: translate(-50%, -50%) rotate(0);}
@@ -325,6 +439,12 @@
       @media screen and (max-width: 1440px) {
         .main-lock {width: 70%;}
         #web-header .title-wrap{width: 100%;}
+        #web-content .history-wrap h4{
+          left: 0;
+          top: -14px;
+          transform: none;
+          z-index: 2;
+        }
       }
       @media screen and (max-width: 1024px) {
         .hidden-1024{display: none;}
@@ -360,6 +480,9 @@
         .main-logo,
         #web-footer .footer-logo{width: 200px;}
         #web-content h4{padding-left: 8px;}
+        #web-content ul.step-list{margin-left: 0;}
+        ul.step-list > li{font-size: 14px;}
+        ul.step-list > li:not(:last-child)::after{left:104%;}
       }
 
       /* 覆蓋原網頁屬性 */
@@ -489,20 +612,43 @@
         </div>
         <div class="content-block relative">
           <div class="spot-wrap hidden-1024">
-            <div class="light-spot lg" style="right: 30%; top: 50%;"></div>
-            <div class="light-spot op-50" style="right: 35%; top: 60%;"></div>
+            <div class="light-spot lg" style="right: 30%; top: 80%;"></div>
+            <div class="light-spot op-50" style="right: 35%; top: 90%;"></div>
           </div>
           <h3 class="wow animate__fadeIn">研討會資訊</h3>
-          <ul class="wow animate__fadeIn list-disc">
-            <li><b>日&emsp;&emsp;期</b>：2022年10月28日 (五)</li>
-            <li><b>時&emsp;&emsp;間</b>：14:00 - 16:00 (2小時)</li>
-            <li><b>地&emsp;&emsp;點</b>：國立中興大學 應用科技大樓 3樓 336教室
-              <a 
-                href="https://www.google.com/maps/place/%E5%9C%8B%E7%AB%8B%E4%B8%AD%E8%88%88%E5%A4%A7%E5%AD%B8/@24.123552,120.675326,15z/data=!4m5!3m4!1s0x0:0xe28afadc0dad203a!8m2!3d24.123552!4d120.675326"
-                title="Google Map: 台中市南區興大路145號"
-                target="_blank"
-              >(台中市南區興大路145號)</a>
-            </li>
+
+          <div class="history-wrap latest-wrap wow animate__fadeIn">
+            <h4>最新</h4>
+            <ul>
+              <li><b>日&emsp;&emsp;期</b>：2022年12月 (暫定)</li>
+              <li><b>時&emsp;&emsp;間</b>：14:00 - 15:30 (一個半小時)</li>
+              <li><b>地&emsp;&emsp;點</b>：未定</li>
+            </ul>
+          </div>
+          
+          <div id="history-container" class="hide">
+            <div class="history-wrap small-wrap">
+              <h4>歷史</h4>
+              <ul>
+                <li><b>日&emsp;&emsp;期</b>：2022年10月28日 (五)</li>
+                <li><b>時&emsp;&emsp;間</b>：14:00 - 16:00 (2小時)</li>
+                <li><b>地&emsp;&emsp;點</b>：國立中興大學 應用科技大樓 3樓 336教室
+                  <a 
+                    href="https://www.google.com/maps/place/%E5%9C%8B%E7%AB%8B%E4%B8%AD%E8%88%88%E5%A4%A7%E5%AD%B8/@24.123552,120.675326,15z/data=!4m5!3m4!1s0x0:0xe28afadc0dad203a!8m2!3d24.123552!4d120.675326"
+                    title="Google Map: 台中市南區興大路145號"
+                    target="_blank"
+                  >(台中市南區興大路145號)</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="wow animate__fadeIn" style="width: 100%; text-align: center; margin: 32px 0;">
+            <button id="history-btn" class="hide">顯示歷史</button>
+          </div>
+          
+
+          <ul class="wow animate__fadeIn">
             <li><b>主辦單位</b>：國立中興大學 資通安全研究與教學中心</li>
             <li><b>協辦單位</b>：產學研鏈結中心 國際產學聯盟</li>
             <li><b>聯絡人員</b>：陳韋綸</li>
@@ -517,13 +663,14 @@
               >twiscnchu@nchu.edu.tw</a>
             </li>
             <li>
-              <b>報名連結</b>：<a 
+              <b>報名連結</b>：籌備中
+              <!-- <a 
                 href="https://docs.google.com/forms/d/e/1FAIpQLScvDr3QIHUbu2tURprrF3pw8-TEJbR7ZUTSlABOJABWTajsnA/viewform" 
                 title="Google報名表單"
                 target="_blank"
-              >Google報名表單</a>
+              >Google報名表單</a> -->
             </li>
-            <li>
+            <!-- <li>
               <b>&emsp;&emsp;&emsp;&emsp;&emsp;</b><a 
                 href="https://docs.google.com/forms/d/e/1FAIpQLScvDr3QIHUbu2tURprrF3pw8-TEJbR7ZUTSlABOJABWTajsnA/viewform" 
                 title="Google報名表單"
@@ -534,7 +681,7 @@
                   style="width: 200px; height: auto;"
                 />
               </a>
-            </li>
+            </li> -->
           </ul>
         </div>
         <div class="content-block relative">
@@ -543,7 +690,7 @@
             <div class="light-spot op-70" style="left: -5%; top: 0%;"></div>
             <div class="light-spot base" style="left: -10%; top: -20%;"></div>
           </div>
-          <h3 class="wow animate__fadeIn">研討會議程</h3>
+          <h3 class="wow animate__fadeIn">研討會時程</h3>
           <table class="wow animate__fadeIn">
             <thead>
               <tr>
@@ -562,18 +709,48 @@
               </tr>
               <tr>
                 <td>14:10~15:10</td>
-                <td>C級學校因應資通安全管理法，VANS 通報作業說明</td>
+                <td>C級學校因應資通安全管理法，VANS 通報作業說明/聯合服務簡介</td>
               </tr>
               <tr>
-                <td>15:10~15:50</td>
-                <td>聯合服務簡介</td>
-              </tr>
-              <tr>
-                <td>15:50~16:00</td>
+                <td>15:10~15:30</td>
                 <td>Q&A</td>
               </tr>
             </tbody>
           </table>
+        </div>
+        
+        <div class="content-block relative">
+          <div class="spot-wrap">
+            <div class="light-spot op-70" style="right: 5%; top: 5%;"></div>
+            <div class="light-spot lg" style="right: 10%; top: 10%;"></div>
+            <div class="light-spot" style="right: 0%; top: 50%;"></div>
+          </div>
+          <h3 class="wow animate__fadeIn">研討會議程</h3>
+          <ul class="line-list">
+            <li class="wow animate__fadeIn">
+              <h4><div class="li-line"></div>何謂VANS / 為何要導入 VANS 系統？</h4>
+            </li>
+            <li class="wow animate__fadeIn">
+              <h4><div class="li-line"></div>參加C級學校聯合雲端 VANS 計畫的優點</h4>
+            </li>
+            <li class="wow animate__fadeIn">
+              <h4><div class="li-line"></div>服務範圍 / 效益</h4>
+            </li>
+            <li class="wow animate__fadeIn">
+              <h4><div class="li-line"></div>案場實績演示</h4>
+            </li>
+            <li class="wow animate__fadeIn">
+              <h4><div class="li-line"></div>如何加入 VANS 計畫</h4>
+            </li>
+          </ul>
+          <p class="wow animate__fadeIn">研討會當日將由專人說明詳情，或可由：「資源下載」→「研討會簡報」處下載簡報說明。</p>
+        </div>
+        <div class="content-block relative">
+          <h3 class="wow animate__fadeIn">資源下載</h3>
+          <ul class="wow animate__fadeIn">
+            <li><b>研討會簡報</b>：<a href="https://drive.google.com/file/d/1bPf7R1skHe8sgBQLg6BLuatmoEdZBAiv/view?usp=share_link" title="下載研討會_VANS介紹" target="_blank">點此下載</a></li>
+            <li><b>Agent安裝影片/操作手冊</b>：<a href="https://drive.google.com/file/d/1Itgm-Nu_mzKmdSt74-rSRXA15voYLL8E/view?usp=share_link" title="下載操作手冊" target="_blank">點此下載</a></li>
+          </ul>
         </div>
         <div class="content-block relative">
           <div class="spot-wrap hidden-1024">
@@ -605,6 +782,31 @@
               </tr>
             </tbody>
           </table>
+        </div>
+        <div class="content-block">
+          <h3 class="wow animate__fadeIn">報名及匯款流程</h3>
+          <ul class="step-list wow animate__fadeIn">
+            <li>報名作業<br><span>(報名學校執行)</span></li>
+            <li>匯款確認</li>
+            <li>VANS服務開通</li>
+          </ul>
+          <ul class="wow animate__fadeIn">
+            <h4 class="step-title">報名作業</h4>
+            <p>備填妥以下報名資料：</p>
+            <ul class="list-desc mt-2" style="padding-left: 32px;margin-top: 8px;">
+              <li><a href="https://docs.google.com/document/d/1azQT9KWUjLHnkQu75-utJbguJFO52orr/edit?usp=share_link&ouid=114707884452175604905&rtpof=true&sd=true" target="_blank" title="下載申請單">C級學校 VANS 雲端服務計畫系統建置申請單</a></li>
+              <li>匯款憑證：匯款單備註「請轉撥於資通安全研究與教學中心」，以加速VANS開通作業</li>
+              <li>貴校資訊 : 校名 / 統編 / 承辦人員聯繫資料( 姓名、電話(含分機)、Email)</li>
+            </ul>
+            <p>Email 至：<a href="mailto:twiscnchu@nchu.edu.tw" title="twiscnchu@nchu.edu.tw">twiscnchu@nchu.edu.tw</a></p>
+            <h4 class="step-title">匯款確認</h4>
+            <p>國立中興大學資通安全研究與教學中心確認繳費後，Email 回傳繳費收據。</p>
+            <h4 class="step-title">VANS服務開通</h4>
+            <p>1. 服務系統設置</p>
+            <p>2. 回覆設置完畢資訊：簡易說明 Agent 安裝與教學文件提供</p>
+            <p>3. 2022/12/31前申辦，優惠提供 <span class="text-underline color-blue font-bold">20間名額</span>，搶先體驗2個月</p>
+          </ul>
+          
         </div>
         <div class="content-block relative">
           <div class="spot-wrap hidden-1024">
@@ -665,5 +867,21 @@
       }
     )
     wow.init();
+
+    const historyBtn = document.getElementById('history-btn');
+    const historyCon = document.getElementById('history-container');
+    historyBtn.addEventListener('click', (e) => {
+      if (historyBtn.classList.contains('hide')) {
+        historyBtn.classList.remove('hide');
+        historyCon.classList.remove('hide');
+        historyBtn.textContent = '隱藏歷史';
+      }
+      else{
+        historyBtn.classList.add('hide');
+        historyCon.classList.add('hide');
+        historyBtn.textContent = '顯示歷史';
+      }
+    });
+
   </script>
 </html>
