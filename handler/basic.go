@@ -86,6 +86,9 @@ func BasicWebHandler(w http.ResponseWriter, r *http.Request) {
 		"/ncsu-cloud": {
 			ZH: "資通安全弱點通報機制",
 		},
+		"/info-sec-prot-share": {
+			ZH: "資通安全弱點通報機制-開會紀錄",
+		},
 	}
 
 	// Handle simple web
