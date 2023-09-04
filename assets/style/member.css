@@ -8,6 +8,10 @@
   margin: 10px;
 }
 
+.hiddencard{
+  opacity: 0;
+}
+
 .card {
   animation-duration: 2s;
   animation-iteration-count: infinite;
