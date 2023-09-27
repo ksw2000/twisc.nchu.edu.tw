@@ -89,6 +89,9 @@ func BasicWebHandler(w http.ResponseWriter, r *http.Request) {
 		"/info-sec-prot-share": {
 			ZH: "資通安全弱點通報機制-開會紀錄",
 		},
+		"/vans-fix-share": {
+			ZH: "VANS通報與軟體弱點修補分享",
+		},
 	}
 
 	// Handle simple web
